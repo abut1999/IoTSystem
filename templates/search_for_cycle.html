@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<!--THIS IS THE HEAD SECTION-->
+    <head>
+    <!--TITLE OF THE WEBPAGE-->
+        <title>Smart Cicle Aarhus</title>
+    <!--EXTERNAL LINKS FOR THE WEBPAGE LIKE CSS OR SQL-->
+        <link rel="stylesheet"  href="{{ url_for('static', filename='CSS/Project_3_IoT_Map_Site_CSS.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='Pictures/favicon.ico')}}" />
+    <!--META INFORMATONS OF THE WEBPAGE-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Smart Cycle Aarhus">
+        <meta name="viewport" content="width=devie-width, initial-scale=1.0, shrink-to-fit=no">
+    </head>
+<!--THIS IS THE BODY SECTION-->
+    <body>
+    <!--DIV FOR THE BODY SECTION-->
+        <ul id="Navigation_Bar_ul" >
+            <li class="Navigation_Bar_li"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="Navigation_Bar_li"><a href="{{ url_for('search_for_cycle') }}">Search for Cycle</a></li>
+            <li id="Navigation_Bar_li_float_right_Signup" class="Navigation_Bar_li"><a href="{{ url_for('registration') }}">Sing up</a></li>
+            <li id="Navigation_Bar_li_float_right_Login" class="Navigation_Bar_li"><a href="{{ url_for('home') }}">Log in</a></li>
+        </ul>
+    <!--HERE COMES THE MAP SECTION-->
+        <div id="Map_Main">
+            <div id="Map_Card">
+                <div id="Map_Introduction">On this map you can see all the free cycles in your surranding area</div>
+                <div id="Map"></div>
+            </div>
+        </div>
+ 
+        <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+        <script>
+            map = new OpenLayers.Map("Map");
+            map.addLayer(new OpenLayers.Layer.OSM());
+ 
+            var lonLat = new OpenLayers.LonLat({{yAsis}} ,{{xAsis}})
+                .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                map.getProjectionObject() // to Spherical Mercator Projection
+             );
+ 
+            var zoom=16;
+            var markers = new OpenLayers.Layer.Markers( "Markers" );
+            map.addLayer(markers);
+ 
+            markers.addMarker(new OpenLayers.Marker(lonLat));
+ 
+            map.setCenter (lonLat, zoom);
+        </script>
+    <!--DIV FOR THE FOOTER-->
+        <div class="footer">
+            <p>© 2019 Smart Cycle Aarhus. All rights reserved, </p>
+        </div>
+    </body>
+</html>

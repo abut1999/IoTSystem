@@ -1,0 +1,82 @@
+/*Body*/
+body {
+    margin: 0;
+    box-sizing: border-box;
+ }
+/*Navigation Bar*/
+#Navigation_Bar_ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color:darkcyan;
+    position: fixed; top: 0;
+    width: 100%;
+}
+.Navigation_Bar_li {
+    float: left
+}
+.Navigation_Bar_li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none
+}
+.Navigation_Bar_li a:hover {
+    background-color: darkslategrey;
+    color: whitesmoke;
+}
+#Navigation_Bar_li_float_right_Login {
+    float: right;
+}
+#Navigation_Bar_li_float_right_Signup{
+    float:right;
+    margin-right: 50px;
+}
+/*MAP*/
+#Map_Main {
+    margin: 0;
+    width: 100%;
+}
+#Map_Card {
+    width: 1000px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:5%;
+    margin-bottom: 15%;
+
+}
+#Map_Introduction {
+    background-color: darkcyan;
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 24px;
+    width: 800px;
+    margin-left:  auto;
+    margin-right: auto;
+}
+#Map {
+    color: darkcyan;
+    width: 1000px;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+/*Footer_____________________________________________________________________________________________________________*/
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 45px;
+    width: 100%;
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+}

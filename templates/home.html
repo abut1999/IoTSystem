@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<!--THIS IS THE HEAD SECTION-->
+    <head>
+    <!--TITLE OF THE WEBPAGE-->
+        <title>Smart Cycle Aarhus</title>        
+    <!--EXTERNAL LINKS FOR THE WEBPAGE LIKE CSS OR SQL-->
+    <link rel="stylesheet"  href="{{ url_for('static', filename='CSS/Project_3_IoT_Home_CSS.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Pictures/favicon.ico')}}" />
+    <!--META INFORMATONS OF THE WEBPAGE-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Smart Cycle Aarhus">
+        <meta name="viewport" content="width=devie-width, initial-scale=1.0, shrink-to-fit=no">
+    </head>
+<!--THIS IS THE BODY SECTION-->
+    <body>
+    <!--DIV FOR THE NAVIGATION BAR-->
+        <ul id="Navigation_Bar_ul" >
+            <li class="Navigation_Bar_li"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="Navigation_Bar_li"><a href="{{ url_for('search_for_cycle') }}">Search for Cycle</a></li>
+			<li id="Navigation_Bar_li_float_right_Signup" class="Navigation_Bar_li"><a href="{{ url_for('registration') }}">Sing up</a></li>
+            <button id="Navigation_Bar_li_float_right_Login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Log in</button>
+        </ul>
+    <!--DIV FOR THE LOGO-->
+        <div id="Logo" >
+            <div id="Logo_Caption">Smart Cycle Aarhus</div>
+        </div>
+    <!--DIV FOR THE ABOUT-->
+        <div id="About_Main">
+            <div id="About_Cards_Main">
+                <div id="About_Video">
+                    <iframe src="https://www.youtube.com/embed/fV84viOy3ok"></iframe>
+                </div>
+                <div id="About_Card">
+                    <div id="About_Header">About</div>
+                    <div id="About_Text">
+                    Smart Cycle Aarhus gives you the chance to ride our brand new electrical cycle. Dowload the app from App Store or Google Play, find a free bike
+                    on the map, follow the introductions and ride the bike. The more time you ride, the cheaper it gets. Pay with Mobile Pay, it fast and easy to use.
+                    Do not wait. Reducie your bike foot print, and use Smar Cycle Aarhus.
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--DIV FOR THE FOOTER-->
+        <div class="footer">
+            <p>© 2019 Smart Cycle Aarhus. All rights reserved, </p>
+        </div>
+    <!--DIV FOR THE LOG IN SECTION-->
+        <div id="id01" class="modal">
+ 
+            <form class="modal-content animate" action="/action_page.php">
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+ 
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+ 
+                    <button type="submit">Login</button>
+                    <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+ 
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a id="pswa" href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+ 
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+ 
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    <!--SMOOTH SCROLL TO THE ABOUT-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+ 
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+ 
+            // Store hash
+            var hash = this.hash;
+ 
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function(){
+ 
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+            } // End if
+            });
+            });
+    </script>
+    </body>
+</html>
